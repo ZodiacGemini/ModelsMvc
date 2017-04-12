@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\bin\Debug\netcoreapp1.1\ModelPractice.deps.json
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\bin\Debug\netcoreapp1.1\ModelPractice.runtimeconfig.json
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\bin\Debug\netcoreapp1.1\ModelPractice.runtimeconfig.dev.json
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\bin\Debug\netcoreapp1.1\ModelPractice.dll
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\bin\Debug\netcoreapp1.1\ModelPractice.pdb
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\obj\Debug\netcoreapp1.1\ModelPractice.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\obj\Debug\netcoreapp1.1\ModelPractice.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\obj\Debug\netcoreapp1.1\ModelPractice.dll
+C:\Users\Administrator\Desktop\DemosMedPontus\.Net Core Demo\ModelsPractice\ModelPractice\ModelPractice\obj\Debug\netcoreapp1.1\ModelPractice.pdb
