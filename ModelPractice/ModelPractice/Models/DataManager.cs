@@ -14,23 +14,55 @@ namespace ModelPractice.Models
             new Person{Id = 3, Name = "Johanna", Email = "Johanna@hotmail.se"},
         };
 
-        public static void AddPerson(Person person)
+        public static void AddPerson(PersonCreateVM viewModel)
         {
-            person.Id = persons.Max(p => p.Id) + 1;
+            var person = new Person
+            {
+                Name = viewModel.Name,
+                Email = viewModel.Email
+            };
+            if (persons.Count > 0)
+                person.Id = persons.Max(p => p.Id) + 1;
+            else
+                person.Id = 1;
 
             persons.Add(person);
         }
 
-        public static Person[] GetAllPeople() => persons.ToArray();
-
-        public static Person GetPerson(int id) => persons.SingleOrDefault(p => p.Id == id);
-
-        public static void UpdatePerson(Person person)
+        public static PeopleIndexVM[] GetAllPeople()
         {
-            var personToUpdate = GetPerson(person.Id);
+            return persons
+                .Select(p => new PeopleIndexVM(p.Id)
+                {
+                    Name = p.Name,
+                    Email = p.Email,
+                    ShowAsHighlighted = p.Email.EndsWith("acme.com")
+                })
+                .ToArray();
+        }
 
-            personToUpdate.Name = person.Name;
-            personToUpdate.Email = person.Email;
+        public static PersonUpdateVM GetPerson(int id)
+        {
+            Person person = GetPersonFromList(id);
+            return new PersonUpdateVM
+            {
+                Name = person.Name,
+                Email = person.Email,
+            };
+        }
+
+        private static Person GetPersonFromList(int id)
+        {
+            return persons
+                 .SingleOrDefault(p => p.Id == id);
+        }
+
+        public static void UpdatePerson(PersonUpdateVM viewModel, int id)
+        {
+            var personToUpdate = GetPersonFromList(id);
+
+            personToUpdate.Name = viewModel.Name;
+            personToUpdate.Email = viewModel.Email;
 
         }
     }

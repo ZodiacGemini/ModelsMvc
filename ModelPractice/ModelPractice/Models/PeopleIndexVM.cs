@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace ModelPractice.Models
 {
-    public class Person
+    public class PeopleIndexVM
     {
-        public int Id { get; set; }
-        
+        [Display(Name = "First Name")]
         public string Name { get; set; }
-        
+        [Display(Name = "E-Mail")]
         public string Email { get; set; }
+        public bool ShowAsHighlighted { get; set; }
+        public int Id { get;}
+
+        public PeopleIndexVM(int id)
+        {
+            Id = id;
+        }
     }
 }

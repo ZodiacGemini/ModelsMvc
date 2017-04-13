@@ -1,16 +1,17 @@
 ﻿@using ModelPractice.Models
 @addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
-@model IEnumerable<Person>
+@model IEnumerable<PeopleIndexVM>
 <!DOCTYPE html>
 <html>
 <head>
     <title>All People</title>
+    <link href="~/css/TableStyle.css" rel="stylesheet" />
     <link href="~/css/bootstrap.min.css" rel="stylesheet" />
     <script src="~/js/jquery-3.2.1.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1 class="jumbotron" style="text-align: center;">Persons</h1>
+    <h1 class="jumbotron" style="text-align: center;">People</h1>
     <div class="table-responsive" style="max-width: 700px; margin: auto; display: flex; flex-direction: column; justify-content: center;">
         <table class="table">
             <thead>
@@ -19,14 +20,23 @@
                     <th>E-mail</th>
                 </tr>
             </thead>
+            <tbody class="tablebody">
             @foreach (var item in Model)
             {
                 <tr>
-                    <td><a asp-route-id="@item.Id" asp-action="Update">@item.Name</a></td>
-                    <td>@item.Email</td>
+                    <td><a asp-route-id="@item.Id" asp-action="Update" style="text-decoration: none; color: black;">@item.Name</a></td>
+                    @if (@item.ShowAsHighlighted)
+                    {
+                        <td style="color: forestgreen;">@item.Email</td>
+                    }
+                    else
+                    {
+                        <td>@item.Email</td>
+                    }
                 </tr>
             }
-        </table>
+                </tbody>
+    </table>
         <a asp-action="Create" class="btn btn-primary" style="width: 50%; margin: auto;">Add new person</a>
     </div>
 </body>

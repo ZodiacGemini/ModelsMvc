@@ -25,12 +25,12 @@ namespace ModelPractice.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Person person)
+        public IActionResult Create(PersonCreateVM viewModel)
         {
             if (!ModelState.IsValid)
-                return View(person);
+                return View(viewModel);
 
-            DataManager.AddPerson(person);
+            DataManager.AddPerson(viewModel);
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
@@ -41,12 +41,12 @@ namespace ModelPractice.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(Person person)
+        public IActionResult Update(PersonUpdateVM viewModel, int id)
         {
             if (!ModelState.IsValid)
-                return View(person);
+                return View(viewModel);
 
-            DataManager.UpdatePerson(person);
+            DataManager.UpdatePerson(viewModel, id);
             return RedirectToAction(nameof(Index));
         }
     }
